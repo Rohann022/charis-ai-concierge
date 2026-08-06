@@ -1,12 +1,29 @@
-import NextAuth from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import { prisma } from "@/lib/prisma";
-import authConfig from "../auth.config";
+import { auth } from "@/auth";
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(prisma),
-  session: {
-    strategy: "database",
-  },
-  ...authConfig,
+export default auth((req) => {
+  const isLoggedIn = !!req.auth;
+
+  const protectedRoutes = [
+    "/dashboard",
+    "/consultation",
+    "/analyzing",
+    "/recommendations",
+  ];
+
+  const isProtected = protectedRoutes.some((route) =>
+    req.nextUrl.pathname.startsWith(route)
+  );
+
+  if (isProtected && !isLoggedIn) {
+    return Response.redirect(new URL("/login", req.url));
+  }
 });
+
+export const config = {
+  matcher: [
+    "/dashboard/:path*",
+    "/consultation/:path*",
+    "/analyzing/:path*",
+    "/recommendations/:path*",
+  ],
+};
