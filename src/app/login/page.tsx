@@ -76,35 +76,37 @@ export default function LoginPage() {
           </p>
 
         </div>
+        <br />
 
 
 
 
         {/* Login button */}
 
-        <button
-          onClick={() =>
-            signIn("google", {
-              callbackUrl: "/consultation",
-            })
-          }
-          className="
-          mt-10
-          flex w-full items-center justify-center gap-3
-          rounded-2xl
-          bg-white
-          py-4
-          font-medium
-          text-black
-          transition-all
-          duration-300
-          hover:scale-[1.02]
-          hover:shadow-xl
-          "
-        >
-          <FcGoogle size={25}/>
-          Continue with Google
-        </button>
+        <div className="mt-10 flex justify-center">
+  <button
+    onClick={() =>
+      signIn("google", {
+        callbackUrl: "/consultation",
+      })
+    }
+    className="
+      flex items-center justify-center gap-3
+      rounded-2xl
+      bg-white
+      px-8 py-4
+      w-[250px]
+      font-medium
+      text-black
+      transition-all duration-300
+      hover:scale-[1.02]
+      hover:shadow-xl
+    "
+  >
+    <FcGoogle size={25} />
+    Continue with Google
+  </button>
+</div> <br />
 
 
 
