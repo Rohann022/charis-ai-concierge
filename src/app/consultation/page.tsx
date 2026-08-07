@@ -91,9 +91,15 @@ export default function ConsultationPage() {
       }
 
       localStorage.setItem(
-        "charisRecommendations",
-        JSON.stringify(ai.recommendations)
-      );
+  "charisRecommendations",
+  JSON.stringify(ai.recommendations)
+);
+
+// Save user preferences for later pages
+localStorage.setItem(
+  "charisPreferences",
+  JSON.stringify(ai.preferences)
+);
 
       setMessages([
         ...updated,

@@ -16,7 +16,9 @@ export type Product = {
   rating: number;
 };
 
+
 export const products: Product[] = [
+
   {
     id: "cartier-watch",
     name: "Cartier Tank Watch",
@@ -24,20 +26,46 @@ export const products: Product[] = [
     category: "Luxury Watch",
     price: 345000,
     image: "/products/cartier-watch.jpg",
+
     description:
-      "An iconic luxury timepiece crafted with timeless elegance and precision.",
+      "An iconic luxury timepiece representing elegance, success, achievement and timeless love.",
+
     reason:
-  "A timeless choice for someone who appreciates elegance and enduring craftsmanship.",
+      "A timeless choice for someone who appreciates luxury, sophistication and classic design.",
+
     story:
       "First introduced in 1917, the Cartier Tank has become one of the world's most celebrated luxury watches.",
+
     meaning:
-      "Represents timeless love, achievement, and unforgettable memories.",
-    interests: ["fashion", "luxury", "business"],
-    personalities: ["elegant", "classic"],
-    occasions: ["birthday", "anniversary"],
+      "Represents achievement, commitment and unforgettable milestones.",
+
+    interests: [
+      "fashion",
+      "luxury",
+      "business",
+      "success",
+      "achievement",
+      "classic"
+    ],
+
+    personalities: [
+      "elegant",
+      "classic",
+      "ambitious",
+      "professional"
+    ],
+
+    occasions: [
+      "birthday",
+      "anniversary",
+      "promotion",
+      "milestone"
+    ],
+
     delivery: "2–4 Business Days",
     rating: 4.9,
   },
+
 
   {
     id: "montblanc-pen",
@@ -46,20 +74,44 @@ export const products: Product[] = [
     category: "Writing Instrument",
     price: 58000,
     image: "/products/montblanc.jpg",
+
     description:
-      "Luxury handcrafted fountain pen with premium black resin finish.",
+      "A luxury writing instrument symbolizing creativity, knowledge and personal achievement.",
+
     reason:
-  "Perfect for someone who values achievement, knowledge, and personal growth.",
+      "Perfect for someone who values growth, success and meaningful achievements.",
+
     story:
-      "Montblanc pens symbolize excellence, achievement, and lifelong success.",
+      "Montblanc pens represent excellence, craftsmanship and lifelong accomplishments.",
+
     meaning:
-      "Perfect for celebrating milestones, promotions, and graduation.",
-    interests: ["writing", "business", "reading"],
-    personalities: ["professional", "classic"],
-    occasions: ["promotion", "birthday", "graduation"],
+      "A reminder of ambition, dreams and important life moments.",
+
+    interests: [
+      "writing",
+      "reading",
+      "business",
+      "knowledge",
+      "learning"
+    ],
+
+    personalities: [
+      "professional",
+      "classic",
+      "thoughtful"
+    ],
+
+    occasions: [
+      "birthday",
+      "graduation",
+      "promotion",
+      "achievement"
+    ],
+
     delivery: "3–5 Business Days",
     rating: 4.8,
   },
+
 
   {
     id: "leather-journal",
@@ -68,20 +120,47 @@ export const products: Product[] = [
     category: "Lifestyle",
     price: 18000,
     image: "/products/journal.jpg",
+
     description:
-      "Handcrafted leather journal designed to preserve meaningful memories.",
-      reason:
-  "Ideal for reflective personalities who enjoy capturing memories and ideas.",
+      "A handcrafted journal designed for creative minds, memories, art, ideas and personal reflections.",
+
+    reason:
+      "Ideal for creative personalities who enjoy expressing thoughts and preserving memories.",
+
     story:
-      "Inspired by timeless British craftsmanship and luxury stationery.",
+      "Inspired by timeless British craftsmanship and luxury stationery traditions.",
+
     meaning:
-      "Encourages creativity, gratitude, and lifelong reflection.",
-    interests: ["journaling", "travel", "reading"],
-    personalities: ["creative", "thoughtful"],
-    occasions: ["birthday", "thank you"],
+      "Encourages creativity, emotional expression and unforgettable memories.",
+
+    interests: [
+      "journaling",
+      "writing",
+      "reading",
+      "art",
+      "painting",
+      "creativity",
+      "travel"
+    ],
+
+    personalities: [
+      "creative",
+      "artistic",
+      "thoughtful",
+      "emotional"
+    ],
+
+    occasions: [
+      "birthday",
+      "anniversary",
+      "thank you",
+      "personal"
+    ],
+
     delivery: "2–3 Business Days",
     rating: 4.7,
   },
+
 
   {
     id: "perfume",
@@ -90,20 +169,44 @@ export const products: Product[] = [
     category: "Fragrance",
     price: 42000,
     image: "/products/perfume.jpg",
+
     description:
-      "A luxurious fragrance known for its rich, unforgettable signature scent.",
-      reason:
-  "A luxurious fragrance for someone who enjoys sophisticated and unforgettable experiences.",
+      "A romantic luxury fragrance creating feelings of love, elegance and unforgettable memories.",
+
+    reason:
+      "A sophisticated fragrance for someone who enjoys beauty, romance and luxury experiences.",
+
     story:
-      "One of the world's most admired luxury perfumes, celebrated for sophistication.",
+      "One of the world's most admired luxury fragrances known for its unique identity.",
+
     meaning:
-      "A memorable gift that leaves a lasting emotional impression.",
-    interests: ["fashion", "beauty"],
-    personalities: ["confident", "elegant"],
-    occasions: ["birthday", "anniversary"],
+      "Creates a lasting emotional impression and a memorable connection.",
+
+    interests: [
+      "fashion",
+      "beauty",
+      "luxury",
+      "style",
+      "romance"
+    ],
+
+    personalities: [
+      "confident",
+      "elegant",
+      "romantic"
+    ],
+
+    occasions: [
+      "birthday",
+      "anniversary",
+      "valentine",
+      "romantic"
+    ],
+
     delivery: "2–4 Business Days",
     rating: 4.9,
   },
+
 
   {
     id: "tea-set",
@@ -112,20 +215,43 @@ export const products: Product[] = [
     category: "Home",
     price: 15000,
     image: "/products/tea-set.jpg",
+
     description:
-      "Handcrafted ceramic tea set inspired by traditional Japanese artistry.",
-      reason:
-  "A meaningful gift that encourages relaxation and quality time together.",
+      "A handcrafted tea experience designed for peaceful moments, relaxation and meaningful conversations.",
+
+    reason:
+      "Perfect for someone who values calmness, culture and quality time.",
+
     story:
-      "Designed by master artisans to celebrate calmness and meaningful conversations.",
+      "Created by artisans inspired by Japanese traditions and mindfulness.",
+
     meaning:
-      "Represents peace, warmth, and togetherness.",
-    interests: ["tea", "home", "culture"],
-    personalities: ["calm", "minimalist"],
-    occasions: ["housewarming", "birthday"],
+      "Represents warmth, peace and togetherness.",
+
+    interests: [
+      "tea",
+      "culture",
+      "home",
+      "relaxation",
+      "tradition"
+    ],
+
+    personalities: [
+      "calm",
+      "minimalist",
+      "thoughtful"
+    ],
+
+    occasions: [
+      "birthday",
+      "housewarming",
+      "anniversary"
+    ],
+
     delivery: "4–6 Business Days",
     rating: 4.8,
   },
+
 
   {
     id: "cashmere-scarf",
@@ -134,18 +260,86 @@ export const products: Product[] = [
     category: "Fashion",
     price: 32000,
     image: "/products/scarf.jpg",
+
     description:
-      "Ultra-soft premium cashmere scarf crafted in Italy.",
-      reason:
-  "A luxurious everyday accessory that symbolizes warmth, comfort, and affection.",
+      "Premium cashmere accessory representing warmth, elegance, comfort and affection.",
+
+    reason:
+      "A luxurious everyday gift that expresses care and sophistication.",
+
     story:
-      "Loro Piana has long been known for exceptional craftsmanship and luxurious fabrics.",
+      "Loro Piana is known worldwide for exceptional craftsmanship and premium fabrics.",
+
     meaning:
-      "A symbol of warmth, comfort, and affection.",
-    interests: ["fashion", "travel"],
-    personalities: ["elegant", "minimalist"],
-    occasions: ["birthday", "christmas"],
+      "Symbolizes warmth, love and thoughtful care.",
+
+    interests: [
+      "fashion",
+      "travel",
+      "style",
+      "luxury"
+    ],
+
+    personalities: [
+      "elegant",
+      "minimalist",
+      "fashionable"
+    ],
+
+    occasions: [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+
     delivery: "3–5 Business Days",
     rating: 4.9,
-  }
+  },
+
+
+  {
+    id: "photo-frame",
+    name: "Personalized Memory Photo Frame",
+    brand: "CHARIS Exclusive",
+    category: "Personalized Gift",
+    price: 4500,
+    image: "/products/photo-frame.jpg",
+
+    description:
+      "A personalized emotional gift designed to preserve love, memories and special moments.",
+
+    reason:
+      "Perfect for romantic occasions and people who value meaningful memories.",
+
+    story:
+      "Created to transform personal moments into timeless keepsakes.",
+
+    meaning:
+      "Represents love, connection and unforgettable memories.",
+
+    interests: [
+      "photography",
+      "art",
+      "memories",
+      "creativity",
+      "romance"
+    ],
+
+    personalities: [
+      "creative",
+      "emotional",
+      "romantic"
+    ],
+
+    occasions: [
+      "birthday",
+      "anniversary",
+      "valentine"
+    ],
+
+    delivery: "5–7 Business Days",
+    rating: 4.8,
+  },
+
+
 ];

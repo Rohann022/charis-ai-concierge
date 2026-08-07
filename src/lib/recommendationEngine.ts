@@ -5,10 +5,13 @@ type Preferences = {
   interests: string[];
   personality: string;
   occasion: string;
+  emotionalGoal?: string;
+  relationship?: string;
 };
 
+
 export function recommendProducts(preferences: Preferences) {
-  // Convert budget safely
+
   const budget =
     typeof preferences.budget === "number"
       ? preferences.budget
@@ -16,54 +19,141 @@ export function recommendProducts(preferences: Preferences) {
           String(preferences.budget).replace(/[^\d]/g, "")
         ) || 0;
 
+
+  const normalize = (text: string) =>
+    text
+      .toLowerCase()
+      .replace(/[^a-z\s]/g, "")
+      .trim();
+
+
   const scoredProducts = products.map((product) => {
+
     let score = 0;
 
-    // Budget Match
-    if (product.price <= budget) {
-      score += 30;
+
+    // Budget matching
+    if (budget > 0) {
+
+      if (product.price <= budget) {
+        score += 30;
+      }
+
+      else if (product.price <= budget * 1.2) {
+        score += 15;
+      }
+
     }
 
-    // Interest Match
-    if (preferences.interests?.length) {
-      preferences.interests.forEach((interest) => {
-        if (
-          product.interests
-            .map((i) => i.toLowerCase())
-            .includes(interest.toLowerCase())
-        ) {
+
+
+    // Interest matching
+    const productInterests =
+      product.interests.map(normalize);
+
+
+    preferences.interests?.forEach((interest)=>{
+
+      const userInterest = normalize(interest);
+
+
+      productInterests.forEach((item)=>{
+
+        if(
+          item.includes(userInterest) ||
+          userInterest.includes(item)
+        ){
           score += 20;
         }
+
       });
+
+    });
+
+
+
+    // Personality matching
+    if(preferences.personality){
+
+      const personality =
+        normalize(preferences.personality);
+
+
+      product.personalities.forEach((p)=>{
+
+        const productPersonality = normalize(p);
+
+
+        if(
+          personality.includes(productPersonality) ||
+          productPersonality.includes(personality)
+        ){
+          score += 25;
+        }
+
+      });
+
     }
 
-    // Personality Match
-    if (
-      preferences.personality &&
-      product.personalities
-        .map((p) => p.toLowerCase())
-        .includes(preferences.personality.toLowerCase())
-    ) {
-      score += 25;
+
+
+
+    // Occasion matching
+    if(preferences.occasion){
+
+      const occasion =
+        normalize(preferences.occasion);
+
+
+      product.occasions.forEach((o)=>{
+
+        const productOccasion =
+          normalize(o);
+
+
+        if(
+          occasion.includes(productOccasion) ||
+          productOccasion.includes(occasion)
+        ){
+          score += 25;
+        }
+
+      });
+
     }
 
-    // Occasion Match
-    if (
-      preferences.occasion &&
-      product.occasions
-        .map((o) => o.toLowerCase())
-        .includes(preferences.occasion.toLowerCase())
-    ) {
-      score += 25;
+
+
+    // Emotional goal matching
+    if(preferences.emotionalGoal){
+
+      const emotion =
+        normalize(preferences.emotionalGoal);
+
+
+      if(
+        product.description
+          ?.toLowerCase()
+          .includes(emotion)
+      ){
+        score += 15;
+      }
+
     }
+
+
 
     return {
       ...product,
-      score,
+      score
     };
+
   });
 
+
+
   return scoredProducts
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
+    .sort((a,b)=>b.score-a.score)
+    .slice(0,3);
+
 }
